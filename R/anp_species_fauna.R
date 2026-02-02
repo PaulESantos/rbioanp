@@ -1,0 +1,31 @@
+#' Standardized Fauna Species of Peruvian Natural Protected Areas (BioANP)
+#'
+#' A comprehensive and cleaned dataset containing the taxonomic classification of
+#' fauna species registered within the National System of Natural Protected Areas
+#' (SINANPE) in Peru. This dataset includes terrestrial and aquatic vertebrates
+#' (amphibians, birds, mammals, reptiles, and fish).
+#'
+#' @format A tibble with 6,420 rows and 7 variables:
+#' \describe{
+#'   \item{grupo}{Character. The general administrative or common group
+#'   classification (e.g., "Anfibios", "Aves", "Mamíferos", "Peces", "Reptiles").}
+#'   \item{clase}{Character. The biological class to which the species belongs
+#'   (e.g., "Amphibia", "Aves", "Mammalia", "Actinopterygii").}
+#'   \item{orden}{Character. The taxonomic order (e.g., "Anura", "Passeriformes").}
+#'   \item{familia}{Character. The taxonomic family (e.g., "Centrolenidae", "Felidae").}
+#'   \item{especie}{Character. The scientific name of the species (binomial nomenclature).}
+#'   \item{sinonimo}{Character. Known taxonomic synonyms if applicable.
+#'   Contains \code{NA} if no synonym is recorded in the cleaned version.}
+#'   \item{rango_taxonomico}{Character. The level of the taxonomic rank,
+#'   "Especie" - "Infraespecie".}
+#' }
+#' @source \url{https://biodiversidadanp.sernanp.gob.pe/}
+#' @examples
+#'
+#'  library(dplyr)
+#'  # Count the number of species per group
+#'  anp_species_fauna %>%
+#'    group_by(grupo) %>%
+#'    tally()
+#'
+"anp_species_fauna"

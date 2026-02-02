@@ -13,11 +13,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# rbioanp
+# rbioanp <img src="man/figures/rbioanplogo.png" align="right" height="200" />
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/rbioanp)](https://CRAN.R-project.org/package=rbioanp)
+[![R-CMD-check](https://github.com/PaulESantos/rbioanp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PaulESantos/rbioanp/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/PaulESantos/rbioanp/graph/badge.svg)](https://app.codecov.io/gh/PaulESantos/rbioanp)
 <!-- badges: end -->
 
 The goal of rbioanp is to ...
