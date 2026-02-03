@@ -10,12 +10,12 @@
 Source:
 [`DESCRIPTION`](https://github.com/PaulESantos/rbioanp/blob/main/DESCRIPTION)
 
-Santos Andrade P (2026). *rbioanp: Access and Process Biodiversity Data
-from bioANP Peru*. R package version 0.1.0,
+Santos Andrade P (2026). *rbioanp: Access and Analyze Biodiversity Data
+from Peru's Protected Natural Areas*. R package version 0.1.0,
 <https://github.com/PaulESantos/rbioanp>.
 
     @Manual{,
-      title = {rbioanp: Access and Process Biodiversity Data from bioANP Peru},
+      title = {rbioanp: Access and Analyze Biodiversity Data from Peru's Protected Natural Areas},
       author = {Paul E. {Santos Andrade}},
       year = {2026},
       note = {R package version 0.1.0},

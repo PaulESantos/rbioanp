@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Access and Process Biodiversity Data from bioANP Peru • rbioanp</title>
+<title>Access and Analyze Biodiversity Data from Peru's Protected Natural Areas • rbioanp</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access and Process Biodiversity Data from bioANP Peru">
-<meta name="description" content="Provides tools for downloading, cleaning, and analyzing flora and fauna inventories from the bioANP platform of the National System of State-Protected Natural Areas (SINANPE) in Peru. It includes functions for taxonomic name normalization, infraspecific rank classification, and biodiversity data visualization.">
-<meta property="og:description" content="Provides tools for downloading, cleaning, and analyzing flora and fauna inventories from the bioANP platform of the National System of State-Protected Natural Areas (SINANPE) in Peru. It includes functions for taxonomic name normalization, infraspecific rank classification, and biodiversity data visualization.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access and Analyze Biodiversity Data from Peru's Protected Natural Areas">
+<meta name="description" content="Provides comprehensive access to curated biodiversity datasets from Perus National System of State-Protected Natural Areas (SINANPE) through the bioANP platform. The package includes standardized datasets of flora and fauna species inventories, occurrence records, and official protected area information. Facilitates biodiversity research and conservation analysis with cleaned taxonomic data and occurrence records from 55,000+ documented species across Perus diverse ecosystems.">
+<meta property="og:description" content="Provides comprehensive access to curated biodiversity datasets from Perus National System of State-Protected Natural Areas (SINANPE) through the bioANP platform. The package includes standardized datasets of flora and fauna species inventories, occurrence records, and official protected area information. Facilitates biodiversity research and conservation analysis with cleaned taxonomic data and occurrence records from 55,000+ documented species across Perus diverse ecosystems.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -45,8 +45,156 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-Provides tools for downloading, cleaning, and analyzing flora and fauna inventories from the bioANP platform of the National System of State-Protected Natural Areas (SINANPE) in Peru. It includes functions for taxonomic name normalization, infraspecific rank classification, and biodiversity data visualization.
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="rbioanp-">rbioanp <img src="reference/figures/rbioanp_logo.png" align="right" height="200"><a class="anchor" aria-label="anchor" href="#rbioanp-"></a>
+</h1></div>
+<!-- badges: start -->
+
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p><strong>rbioanp</strong> provides convenient access to curated biodiversity datasets from Peru’s National System of State-Protected Natural Areas (SINANPE) through the <a href="https://biodiversidadanp.sernanp.gob.pe/" class="external-link">bioANP platform</a>. The package includes standardized datasets of flora and fauna species inventories and occurrence records from Peru’s diverse ecosystems, facilitating biodiversity research and conservation analysis.</p>
+</div>
+<div class="section level2">
+<h2 id="motivation">Motivation<a class="anchor" aria-label="anchor" href="#motivation"></a>
+</h2>
+<p>Peru is one of the most biodiverse countries in the world, with vast ecosystems ranging from the Amazon rainforest to the Andes mountains and coastal regions. The SINANPE system protects these critical areas, and the bioANP platform provides comprehensive biodiversity inventories. This package makes these valuable datasets easily accessible to researchers, conservationists, and data scientists using R.</p>
+</div>
+<div class="section level2">
+<h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
+</h2>
+<ul>
+<li>
+<strong>Access to official biodiversity data</strong> from Peru’s protected natural areas</li>
+<li>
+<strong>Flora dataset</strong>: 12,052+ standardized plant species across SINANPE</li>
+<li>
+<strong>Fauna dataset</strong>: 6,420+ animal species (vertebrates) with taxonomic classification</li>
+<li>
+<strong>Occurrence records</strong>: 55,155+ species occurrences within protected areas</li>
+<li>
+<strong>Protected areas registry</strong>: Official listing of 287 state-protected natural areas with legal and administrative information</li>
+<li>
+<strong>Cleaned taxonomic data</strong>: Standardized scientific names, infraspecific ranks, and taxonomic classifications</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="datasets-included">Datasets Included<a class="anchor" aria-label="anchor" href="#datasets-included"></a>
+</h2>
+<div class="section level3">
+<h3 id="anp_list">
+<code>anp_list</code><a class="anchor" aria-label="anchor" href="#anp_list"></a>
+</h3>
+<p>Official list of state-protected natural areas in Peru, including: - Protection categories (National Parks, Reserves, Sanctuaries, etc.) - Legal instruments and dates of creation/modification - Geographic extent and administrative location - Total area in hectares</p>
+</div>
+<div class="section level3">
+<h3 id="anp_species_flora">
+<code>anp_species_flora</code><a class="anchor" aria-label="anchor" href="#anp_species_flora"></a>
+</h3>
+<p>Standardized flora species inventory with: - Scientific binomial names (standardized to current taxonomic standards) - Family and order classifications (APG system) - Infraspecific rank information (subspecies, varieties, forms)</p>
+</div>
+<div class="section level3">
+<h3 id="anp_species_fauna">
+<code>anp_species_fauna</code><a class="anchor" aria-label="anchor" href="#anp_species_fauna"></a>
+</h3>
+<p>Comprehensive fauna species inventory including: - Taxonomic classification (class, order, family, species) - General group classification (amphibians, birds, mammals, reptiles, fish) - Taxonomic synonyms when applicable - 6,420+ documented species</p>
+</div>
+<div class="section level3">
+<h3 id="anp_species_occ">
+<code>anp_species_occ</code><a class="anchor" aria-label="anchor" href="#anp_species_occ"></a>
+</h3>
+<p>Species occurrence records with: - Detailed taxonomic information - Protected area location and category - Endemic and threatened species indicators - Infraspecific rank and taxonomic classification - 55,155+ occurrence records</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of rbioanp from GitHub:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Install devtools if not already installed</span></span>
+<span><span class="co"># install.packages("devtools")</span></span>
+<span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"PaulESantos/rbioanp"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="quick-start">Quick Start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/PaulESantos/rbioanp" class="external-link">rbioanp</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load the protected areas registry</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">anp_list</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">anp_list</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Count protected areas by category</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">anp_list</span><span class="op">$</span><span class="va">categoria</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load fauna species data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">anp_species_fauna</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Count species by group</span></span>
+<span><span class="va">anp_species_fauna</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">grupo</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">tally</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load occurrence records</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">anp_species_occ</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Find endemic threatened species</span></span>
+<span><span class="va">anp_species_occ</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">endemica</span> <span class="op">==</span> <span class="cn">TRUE</span>, <span class="va">amenazada</span> <span class="op">==</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Species distribution across protected areas</span></span>
+<span><span class="va">anp_species_occ</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count</a></span><span class="op">(</span><span class="va">anp_nombre</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="data-sources">Data Sources<a class="anchor" aria-label="anchor" href="#data-sources"></a>
+</h2>
+<p>All datasets are sourced from the official <a href="https://biodiversidadanp.sernanp.gob.pe/" class="external-link">bioANP platform</a> maintained by the National Service of State-Protected Natural Areas (SERNANP, Servicio Nacional de Áreas Naturales Protegidas por el Estado).</p>
+</div>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
+<p>If you use this package in your research, please cite:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>Santos Andrade, P. <span class="fu">E.</span> (<span class="dv">2026</span>). rbioanp<span class="sc">:</span> Access and Analyze Biodiversity Data from</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>Peru<span class="st">'s Protected Natural Areas. R package version 0.1.0.</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="st">https://github.com/PaulESantos/rbioanp</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
+</h2>
+<p>Contributions are welcome! Please read <a href="CONTRIBUTING.html">CONTRIBUTING.md</a> for details on our code of conduct and the process for submitting pull requests.</p>
+</div>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p>This package is licensed under the MIT License - see the <a href="LICENSE.html">LICENSE</a> file for details.</p>
+</div>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
+<p>Please note that this project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+</div>
+<div class="section level2">
+<h2 id="support">Support<a class="anchor" aria-label="anchor" href="#support"></a>
+</h2>
+<p>For issues, questions, or suggestions, please visit the <a href="https://github.com/PaulESantos/rbioanp/issues" class="external-link">GitHub Issues page</a> or see our <a href="SUPPORT.html">Support guidelines</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="related-resources">Related Resources<a class="anchor" aria-label="anchor" href="#related-resources"></a>
+</h2>
+<ul>
+<li>
+<a href="https://biodiversidadanp.sernanp.gob.pe/" class="external-link">bioANP Platform</a> - Official biodiversity portal</li>
+<li>
+<a href="https://www.gob.pe/sernanp" class="external-link">SERNANP Official Website</a> - National Service of State-Protected Natural Areas</li>
+<li>
+<a href="https://www.gob.pe/institucion/sernanp" class="external-link">SINANPE System</a> - Peru’s National System of Protected Areas</li>
+</ul>
+</div>
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
@@ -86,7 +234,15 @@ Provides tools for downloading, cleaning, and analyzing flora and fauna inventor
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://CRAN.R-project.org/package=rbioanp" class="external-link"><img src="https://www.r-pkg.org/badges/version/rbioanp" alt="CRAN status"></a></li>
+<li><a href="https://github.com/PaulESantos/rbioanp/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/PaulESantos/rbioanp/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://app.codecov.io/gh/PaulESantos/rbioanp" class="external-link"><img src="https://codecov.io/gh/PaulESantos/rbioanp/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>

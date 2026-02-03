@@ -1,8 +1,161 @@
-Provides tools for downloading, cleaning, and analyzing flora and fauna
-inventories from the bioANP platform of the National System of
-State-Protected Natural Areas (SINANPE) in Peru. It includes functions
-for taxonomic name normalization, infraspecific rank classification, and
-biodiversity data visualization.
+# rbioanp ![](reference/figures/rbioanp_logo.png)
+
+## Overview
+
+**rbioanp** provides convenient access to curated biodiversity datasets
+from Peru’s National System of State-Protected Natural Areas (SINANPE)
+through the [bioANP platform](https://biodiversidadanp.sernanp.gob.pe/).
+The package includes standardized datasets of flora and fauna species
+inventories and occurrence records from Peru’s diverse ecosystems,
+facilitating biodiversity research and conservation analysis.
+
+## Motivation
+
+Peru is one of the most biodiverse countries in the world, with vast
+ecosystems ranging from the Amazon rainforest to the Andes mountains and
+coastal regions. The SINANPE system protects these critical areas, and
+the bioANP platform provides comprehensive biodiversity inventories.
+This package makes these valuable datasets easily accessible to
+researchers, conservationists, and data scientists using R.
+
+## Features
+
+- **Access to official biodiversity data** from Peru’s protected natural
+  areas
+- **Flora dataset**: 12,052+ standardized plant species across SINANPE
+- **Fauna dataset**: 6,420+ animal species (vertebrates) with taxonomic
+  classification
+- **Occurrence records**: 55,155+ species occurrences within protected
+  areas
+- **Protected areas registry**: Official listing of 287 state-protected
+  natural areas with legal and administrative information
+- **Cleaned taxonomic data**: Standardized scientific names,
+  infraspecific ranks, and taxonomic classifications
+
+## Datasets Included
+
+### `anp_list`
+
+Official list of state-protected natural areas in Peru, including: -
+Protection categories (National Parks, Reserves, Sanctuaries, etc.) -
+Legal instruments and dates of creation/modification - Geographic extent
+and administrative location - Total area in hectares
+
+### `anp_species_flora`
+
+Standardized flora species inventory with: - Scientific binomial names
+(standardized to current taxonomic standards) - Family and order
+classifications (APG system) - Infraspecific rank information
+(subspecies, varieties, forms)
+
+### `anp_species_fauna`
+
+Comprehensive fauna species inventory including: - Taxonomic
+classification (class, order, family, species) - General group
+classification (amphibians, birds, mammals, reptiles, fish) - Taxonomic
+synonyms when applicable - 6,420+ documented species
+
+### `anp_species_occ`
+
+Species occurrence records with: - Detailed taxonomic information -
+Protected area location and category - Endemic and threatened species
+indicators - Infraspecific rank and taxonomic classification - 55,155+
+occurrence records
+
+## Installation
+
+You can install the development version of rbioanp from GitHub:
+
+``` r
+# Install devtools if not already installed
+# install.packages("devtools")
+
+devtools::install_github("PaulESantos/rbioanp")
+```
+
+## Quick Start
+
+``` r
+library(rbioanp)
+library(dplyr)
+
+# Load the protected areas registry
+data(anp_list)
+head(anp_list)
+
+# Count protected areas by category
+table(anp_list$categoria)
+
+# Load fauna species data
+data(anp_species_fauna)
+
+# Count species by group
+anp_species_fauna %>%
+  group_by(grupo) %>%
+  tally()
+
+# Load occurrence records
+data(anp_species_occ)
+
+# Find endemic threatened species
+anp_species_occ %>%
+  filter(endemica == TRUE, amenazada == TRUE)
+
+# Species distribution across protected areas
+anp_species_occ %>%
+  count(anp_nombre, sort = TRUE)
+```
+
+## Data Sources
+
+All datasets are sourced from the official [bioANP
+platform](https://biodiversidadanp.sernanp.gob.pe/) maintained by the
+National Service of State-Protected Natural Areas (SERNANP, Servicio
+Nacional de Áreas Naturales Protegidas por el Estado).
+
+## Citation
+
+If you use this package in your research, please cite:
+
+``` R
+Santos Andrade, P. E. (2026). rbioanp: Access and Analyze Biodiversity Data from
+Peru's Protected Natural Areas. R package version 0.1.0.
+https://github.com/PaulESantos/rbioanp
+```
+
+## Contributing
+
+Contributions are welcome! Please read
+[CONTRIBUTING.md](https://paulesantos.github.io/rbioanp/CONTRIBUTING.md)
+for details on our code of conduct and the process for submitting pull
+requests.
+
+## License
+
+This package is licensed under the MIT License - see the
+[LICENSE](https://paulesantos.github.io/rbioanp/LICENSE.md) file for
+details.
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of
+Conduct](https://paulesantos.github.io/rbioanp/CODE_OF_CONDUCT.md). By
+participating in this project you agree to abide by its terms.
+
+## Support
+
+For issues, questions, or suggestions, please visit the [GitHub Issues
+page](https://github.com/PaulESantos/rbioanp/issues) or see our [Support
+guidelines](https://paulesantos.github.io/rbioanp/SUPPORT.md).
+
+## Related Resources
+
+- [bioANP Platform](https://biodiversidadanp.sernanp.gob.pe/) - Official
+  biodiversity portal
+- [SERNANP Official Website](https://www.gob.pe/sernanp) - National
+  Service of State-Protected Natural Areas
+- [SINANPE System](https://www.gob.pe/institucion/sernanp) - Peru’s
+  National System of Protected Areas
 
 # Package index
 
