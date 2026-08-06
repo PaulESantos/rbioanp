@@ -55,6 +55,7 @@ A tibble with 6,420 rows and 7 variables:
 ## Examples
 
 ``` r
+
  library(dplyr)
 #> 
 #> Attaching package: ‘dplyr’

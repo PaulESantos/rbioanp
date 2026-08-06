@@ -64,7 +64,7 @@ A tibble with 287 rows and 13 variables:
   contain multiple dates separated by slashes for multiple
   modifications. Contains NA if no modifications exist.
 
-- ubicación_politica:
+- ubicacion_politica:
 
   Character. Political-administrative location of the protected area,
   listing department(s) where it is located. Multiple departments are
@@ -163,6 +163,5 @@ subset(anp_list, fecha_promulgacion_creacion > as.Date("2000-01-01"))
 
 # Total protected area (hectares) by category
 aggregate(extension_ha ~ categoria, data = anp_list, FUN = sum)
-
 } # }
 ```

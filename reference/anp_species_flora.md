@@ -50,9 +50,9 @@ A tibble with 12,052 rows and 5 variables:
 
 ``` r
 if (FALSE) { # \dontrun{
- library(dplyr)
- # Filter for species within the Cactaceae family
- cacti <- anp_species_flora %>%
-   filter(familia_clean == "Cactaceae")
+library(dplyr)
+# Filter for species within the Cactaceae family
+cacti <- anp_species_flora %>%
+    filter(familia == "Cactaceae")
 } # }
 ```

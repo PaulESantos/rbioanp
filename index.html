@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Access and Analyze Biodiversity Data from Peru's Protected Natural Areas • rbioanp</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access and Analyze Biodiversity Data from Peru's Protected Natural Areas">
 <meta name="description" content="Provides comprehensive access to curated biodiversity datasets from Perus National System of State-Protected Natural Areas (SINANPE) through the bioANP platform. The package includes standardized datasets of flora and fauna species inventories, occurrence records, and official protected area information. Facilitates biodiversity research and conservation analysis with cleaned taxonomic data and occurrence records from 55,000+ documented species across Perus diverse ecosystems.">
@@ -18,11 +18,11 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="index.html">rbioanp</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,12 +32,13 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/index.html">Articles</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/PaulESantos/rbioanp/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/PaulESantos/rbioanp"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -67,15 +68,15 @@
 <li>
 <strong>Access to official biodiversity data</strong> from Peru’s protected natural areas</li>
 <li>
-<strong>Flora dataset</strong>: 12,052+ standardized plant species across SINANPE</li>
+<strong>Flora dataset</strong>: 12,050+ standardized plant species across SINANPE</li>
 <li>
-<strong>Fauna dataset</strong>: 6,420+ animal species (vertebrates) with taxonomic classification</li>
+<strong>Fauna dataset</strong>: 6,400+ animal species (vertebrates) with taxonomic classification</li>
 <li>
-<strong>Occurrence records</strong>: 55,155+ species occurrences within protected areas</li>
+<strong>Occurrence records</strong>: 55,100+ species occurrences within protected areas</li>
 <li>
 <strong>Protected areas registry</strong>: Official listing of 287 state-protected natural areas with legal and administrative information</li>
 <li>
-<strong>Cleaned taxonomic data</strong>: Standardized scientific names, infraspecific ranks, and taxonomic classifications</li>
+<strong>Standardized taxonomic data</strong>: Updated scientific names, families, and orders based on international standards (APG for flora, ITIS for fauna)</li>
 </ul>
 </div>
 <div class="section level2">
@@ -85,25 +86,49 @@
 <h3 id="anp_list">
 <code>anp_list</code><a class="anchor" aria-label="anchor" href="#anp_list"></a>
 </h3>
-<p>Official list of state-protected natural areas in Peru, including: - Protection categories (National Parks, Reserves, Sanctuaries, etc.) - Legal instruments and dates of creation/modification - Geographic extent and administrative location - Total area in hectares</p>
+<p>Official list of state-protected natural areas in Peru.</p>
+<ul>
+<li>
+<strong>Variables</strong>: <code>categoria</code>, <code>codigo</code>, <code>nombre</code>, <code>base_legal_creacion</code>, <code>fecha_promulgacion_creacion</code>, <code>ubicacion_politica</code>, <code>extension_ha</code>, etc.</li>
+<li>
+<strong>Scope</strong>: Includes National Parks, Reserves, Sanctuaries, and more.</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="anp_species_flora">
 <code>anp_species_flora</code><a class="anchor" aria-label="anchor" href="#anp_species_flora"></a>
 </h3>
-<p>Standardized flora species inventory with: - Scientific binomial names (standardized to current taxonomic standards) - Family and order classifications (APG system) - Infraspecific rank information (subspecies, varieties, forms)</p>
+<p>Standardized flora species inventory.</p>
+<ul>
+<li>
+<strong>Taxonomy</strong>: Aligned with APG (Angiosperm Phylogeny Group) standards.</li>
+<li>
+<strong>Variables</strong>: <code>especie</code>, <code>familia</code>, <code>orden</code>, <code>rango_infraespecifico</code>, <code>rango_taxonomico</code>.</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="anp_species_fauna">
 <code>anp_species_fauna</code><a class="anchor" aria-label="anchor" href="#anp_species_fauna"></a>
 </h3>
-<p>Comprehensive fauna species inventory including: - Taxonomic classification (class, order, family, species) - General group classification (amphibians, birds, mammals, reptiles, fish) - Taxonomic synonyms when applicable - 6,420+ documented species</p>
+<p>Comprehensive fauna species inventory (Vertebrates).</p>
+<ul>
+<li>
+<strong>Taxonomy</strong>: Cleaned and validated following ITIS standards.</li>
+<li>
+<strong>Variables</strong>: <code>grupo</code>, <code>clase</code>, <code>orden</code>, <code>familia</code>, <code>especie</code>, <code>sinonimo</code>, <code>rango_taxonomico</code>.</li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="anp_species_occ">
 <code>anp_species_occ</code><a class="anchor" aria-label="anchor" href="#anp_species_occ"></a>
 </h3>
-<p>Species occurrence records with: - Detailed taxonomic information - Protected area location and category - Endemic and threatened species indicators - Infraspecific rank and taxonomic classification - 55,155+ occurrence records</p>
+<p>Species occurrence records within protected areas.</p>
+<ul>
+<li>
+<strong>Integration</strong>: Combines species data with geographic context.</li>
+<li>
+<strong>Variables</strong>: <code>anp_nombre</code>, <code>anp_categoria</code>, <code>especie</code>, <code>familia</code>, <code>orden</code>, <code>endemica</code>, <code>amenazada</code>, etc.</li>
+</ul>
 </div>
 </div>
 <div class="section level2">
@@ -230,19 +255,11 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Paul E. Santos Andrade <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-6635-0375" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Paul E. Santos Andrade <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-6635-0375" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-<li><a href="https://CRAN.R-project.org/package=rbioanp" class="external-link"><img src="https://www.r-pkg.org/badges/version/rbioanp" alt="CRAN status"></a></li>
-<li><a href="https://github.com/PaulESantos/rbioanp/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/PaulESantos/rbioanp/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://app.codecov.io/gh/PaulESantos/rbioanp" class="external-link"><img src="https://codecov.io/gh/PaulESantos/rbioanp/graph/badge.svg" alt="Codecov test coverage"></a></li>
-</ul>
-</div>
+
 
   </aside>
 </div>
@@ -253,7 +270,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
