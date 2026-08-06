@@ -1,7 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rbioanp <img src="man/figures/rbioanp_logo.png" align="right" height="200" />
+# rbioanp <img src="man/figures/rbioanp_logo.png" align="right" height="139" width="120" style="max-height: 139px; height: 139px; width: auto;" />
+
 
 <!-- badges: start -->
 

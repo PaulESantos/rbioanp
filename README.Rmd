@@ -13,7 +13,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-# rbioanp <img src="man/figures/rbioanp_logo.png" align="right" height="200" />
+# rbioanp <img src="man/figures/rbioanp_logo.png" align="right" height="139" width="120" style="max-height: 139px; height: 139px; width: auto;" />
+
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
