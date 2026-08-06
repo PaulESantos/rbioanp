@@ -3,7 +3,7 @@ Title: Access and Analyze Biodiversity Data from Peru's Protected Natural Areas
 Version: 0.1.0
 Authors@R:
     person("Paul E.", "Santos Andrade", ,
-    "paulefrens@gmail.com", role = c("aut", "cre"),
+    "paulefrens@gmail.com", role = c("aut", "cre", "cph"),
     comment = c(ORCID = "0000-0002-6635-0375"))
 Description: Provides comprehensive access to curated biodiversity datasets from
     Peru's National System of State-Protected Natural Areas (SINANPE) through the
@@ -20,11 +20,14 @@ Depends:
 Suggests:
     testthat (>= 3.0.0),
     knitr,
+    rmarkdown,
+    pkgdown,
     dplyr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+RoxygenNote: 8.0.0
+VignetteBuilder: knitr
 LazyData: true
-Imports:
-    dplyr
+
+

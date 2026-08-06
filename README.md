@@ -33,48 +33,52 @@ This package makes these valuable datasets easily accessible to
 researchers, conservationists, and data scientists using R.
 
 ## Features
-
+  
 - **Access to official biodiversity data** from Peru’s protected natural
   areas
-- **Flora dataset**: 12,052+ standardized plant species across SINANPE
-- **Fauna dataset**: 6,420+ animal species (vertebrates) with taxonomic
+- **Flora dataset**: 12,050+ standardized plant species across SINANPE
+- **Fauna dataset**: 6,400+ animal species (vertebrates) with taxonomic
   classification
-- **Occurrence records**: 55,155+ species occurrences within protected
+- **Occurrence records**: 55,100+ species occurrences within protected
   areas
 - **Protected areas registry**: Official listing of 287 state-protected
   natural areas with legal and administrative information
-- **Cleaned taxonomic data**: Standardized scientific names,
-  infraspecific ranks, and taxonomic classifications
-
+- **Standardized taxonomic data**: Updated scientific names, families, and
+  orders based on international standards (APG for flora, ITIS for fauna)
+  
 ## Datasets Included
-
+  
 ### `anp_list`
-
-Official list of state-protected natural areas in Peru, including: -
-Protection categories (National Parks, Reserves, Sanctuaries, etc.) -
-Legal instruments and dates of creation/modification - Geographic extent
-and administrative location - Total area in hectares
-
+  
+Official list of state-protected natural areas in Peru.
+  
+- **Variables**: `categoria`, `codigo`, `nombre`, `base_legal_creacion`,
+  `fecha_promulgacion_creacion`, `ubicacion_politica`, `extension_ha`, etc.
+- **Scope**: Includes National Parks, Reserves, Sanctuaries, and more.
+  
 ### `anp_species_flora`
-
-Standardized flora species inventory with: - Scientific binomial names
-(standardized to current taxonomic standards) - Family and order
-classifications (APG system) - Infraspecific rank information
-(subspecies, varieties, forms)
-
+  
+Standardized flora species inventory.
+  
+- **Taxonomy**: Aligned with APG (Angiosperm Phylogeny Group) standards.
+- **Variables**: `especie`, `familia`, `orden`, `rango_infraespecifico`,
+  `rango_taxonomico`.
+  
 ### `anp_species_fauna`
-
-Comprehensive fauna species inventory including: - Taxonomic
-classification (class, order, family, species) - General group
-classification (amphibians, birds, mammals, reptiles, fish) - Taxonomic
-synonyms when applicable - 6,420+ documented species
-
+  
+Comprehensive fauna species inventory (Vertebrates).
+  
+- **Taxonomy**: Cleaned and validated following ITIS standards.
+- **Variables**: `grupo`, `clase`, `orden`, `familia`, `especie`,
+  `sinonimo`, `rango_taxonomico`.
+  
 ### `anp_species_occ`
-
-Species occurrence records with: - Detailed taxonomic information -
-Protected area location and category - Endemic and threatened species
-indicators - Infraspecific rank and taxonomic classification - 55,155+
-occurrence records
+  
+Species occurrence records within protected areas.
+  
+- **Integration**: Combines species data with geographic context.
+- **Variables**: `anp_nombre`, `anp_categoria`, `especie`, `familia`,
+  `orden`, `endemica`, `amenazada`, etc.
 
 ## Installation
 

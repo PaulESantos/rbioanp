@@ -6,3 +6,6 @@
 .quarto
 docs
 data-raw
+.agent
+.agents
+

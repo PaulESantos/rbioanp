@@ -9,3 +9,8 @@
 ^docs$
 ^pkgdown$
 ^data-raw$
+^\.agent$
+^\.agents$
+^benchmark_fozziejoin_vs_fuzzyjoin\.png$
+^treemendous_ambiguous_genera\.csv$
+

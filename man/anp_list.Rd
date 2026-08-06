@@ -29,7 +29,7 @@ references separated by semicolons. Contains NA if no modifications exist.}
 \item{fecha_promulgacion_modificacion}{Character. Promulgation date(s) of
 modification legal instruments. May contain multiple dates separated by
 slashes for multiple modifications. Contains NA if no modifications exist.}
-\item{ubicación_politica}{Character. Political-administrative location of
+\item{ubicacion_politica}{Character. Political-administrative location of
 the protected area, listing department(s) where it is located. Multiple
 departments are separated by commas and "y" (and).}
 \item{extension_ha}{Numeric. Total area of the protected area in hectares.}
@@ -103,7 +103,6 @@ subset(anp_list, fecha_promulgacion_creacion > as.Date("2000-01-01"))
 
 # Total protected area (hectares) by category
 aggregate(extension_ha ~ categoria, data = anp_list, FUN = sum)
-
 }
 
 }

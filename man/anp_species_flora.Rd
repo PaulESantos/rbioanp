@@ -36,10 +36,10 @@ taxonomic standards for Families and Orders.
 }
 \examples{
 \dontrun{
- library(dplyr)
- # Filter for species within the Cactaceae family
- cacti <- anp_species_flora \%>\%
-   filter(familia_clean == "Cactaceae")
+library(dplyr)
+# Filter for species within the Cactaceae family
+cacti <- anp_species_flora \%>\%
+    filter(familia == "Cactaceae")
 }
 }
 \keyword{datasets}

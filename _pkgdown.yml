@@ -1,4 +1,35 @@
 url: https://paulesantos.github.io/rbioanp/
+development:
+  mode: release
 template:
   bootstrap: 5
+  bootswatch: flatly
+navbar:
+  structure:
+    left:
+    - intro
+    - reference
+    - articles
+    - news
+    right:
+    - search
+    - github
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/PaulESantos/rbioanp
+reference:
+- title: Biodiversity & ANP Datasets
+  desc: Core datasets providing access to Peru's protected area registry, flora, fauna,
+    occurrences, and global biogeography.
+  contents:
+  - anp_list
+  - anp_species_flora
+  - anp_species_fauna
+  - anp_species_occ
+  - anp_especies_distr
+articles:
+- title: Data Paper & Synthesis
+  desc: Comprehensive biological and biogeographic analysis of datasets.
+  contents: data-paper
 
