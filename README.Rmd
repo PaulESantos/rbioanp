@@ -72,9 +72,9 @@ pak::pak("PaulESantos/rbioanp")
 
 ## Quick Start
 
-```{r example, eval=FALSE}
+```{r example}
 library(rbioanp)
-library(dplyr)
+library(tidyverse)
 
 # Load the protected areas registry
 data(anp_list)
